@@ -1,14 +1,14 @@
 ::--------------------------------------------------------------
 ::SET CUSTOM COLOR FOR THE BATCH FILES
 ::--------------------------------------------------------------
-rem color 1F
 ::--------------------------------------------------------------
 ::OPTION 1: PROGRAM ROUTES
 ::--------------------------------------------------------------
-set "nut=ztools\squirrel.py"
+set "squirrel=ztools\squirrel.exe"
+set "REDsquirrel=ztools\RedSquirrel.exe"
 ::python command
-set "pycommand=py -3"
-set "pycommandw=pyw -3"
+set "pycommand="
+set "pycommandw="
 ::--------------------------------------------------------------
 ::INTERFACE OPTIONS
 ::--------------------------------------------------------------

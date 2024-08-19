@@ -14,11 +14,11 @@ set "zip_fold=NSCB_zips"
 ::--------------------------------------------------------------
 ::OPTION 2: PROGRAM ROUTES
 ::--------------------------------------------------------------
-set "nut=ztools\squirrel.py"
+set "nut=ztools\squirrel.exe"
 set "xci_lib=ztools\XCI.bat"
 set "nsp_lib=ztools\NSP.bat"
-set "zip=ztools\squirrel.py"
-set "listmanager=ztools\squirrel.py"
+set "zip=ztools\squirrel.exe"
+set "listmanager=ztools\squirrel.exe"
 set "batconfig=ztools\NSCB_config.bat"
 set "batdepend=ztools\install_dependencies.bat"
 set "infobat=ztools\info.bat"
@@ -26,7 +26,7 @@ set "infobat=ztools\info.bat"
 ::OPTION 3: SQUIRREL OPTIONS
 ::--------------------------------------------------------------
 ::python command
-set "pycommand=py -3"
+set "pycommand="
 ::Buffer for the copy functions. 
 ::Change the number for the number of bytes that works best for you
 ::32768=32kB ; 65536=64kB
@@ -92,7 +92,16 @@ set "zip_restore=false"
 :: "6.0.0-4 - 6.1.0" 	   -> vkey = 6 
 :: "6.2.0"	    	 	   -> vkey = 7
 :: "7.0.0 - 8.01"	  	   -> vkey = 8
-:: "8.1.0 "	  	           -> vkey = 9
+:: "8.1.0"                 -> vkey = 9
+:: "9.0.0 - 9.0.1"         -> vkey = 10
+:: "9.1.0 - 11.0.3"        -> vkey = 11
+:: "12.1.0"                -> vkey = 12
+:: "13.0.0 - 13.2.1"       -> vkey = 13
+:: "14.0.0 - 14.1.2"       -> vkey = 14
+:: "15.0.0 - 15.0.1"       -> vkey = 15
+:: "16.0.0 - 16.1.0"       -> vkey = 16
+:: "17.0.0 - 17.0.1"       -> vkey = 17
+:: "18.0.0 - "             -> vkey = 18
 set "vkey=-kp false"
 
 ::--------------------------------------------------------------
@@ -156,8 +165,8 @@ set "workers=-threads 1"
 ::--------------------------------------------------------------
 ::OPTION 18: NSZ user options
 ::--------------------------------------------------------------
-set compression_lv=17
-set compression_threads=0
+set compression_lv=22
+set compression_threads=4
 set "xci_export=xcz"
 
 ::--------------------------------------------------------------
@@ -184,4 +193,4 @@ set "MTP_ptch_inst_spec=spec1"
 ::--------------------------------------------------------------
 ::Lib_call
 ::--------------------------------------------------------------
-set "squirrel_lb=ztools\squirrel_lib_call.py"
+set "squirrel_lb=ztools\squirrel_lib_call.exe"

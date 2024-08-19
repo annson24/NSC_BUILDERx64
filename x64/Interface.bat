@@ -28,7 +28,8 @@ set "host=%host%"
 set "noconsole=%noconsole%"
 set "pycommandw=%pycommandw%"
 REM PROGRAMS
-set "squirrel=%nut%"
+set "squirrel=%squirrel%"
+set "REDsquirrel=%REDsquirrel%"
 REM FILES
 set "dec_keys=%dec_keys%"
 )
@@ -47,17 +48,17 @@ if not exist "%dec_keys%" ( goto missing_things )
 if "%start_minimized%" EQU "yes" ( goto minimize )
 goto start
 :minimize
-if not "%1" == "min" start /MIN cmd /c %0 min & exit/b >nul 2>&1
+if not "%1" == "min" start /MIN cmd /c %0 min & exit/b >nul 2>&1 
 :start
 if "%noconsole%" == "false" (%pycommand% "%squirrel%" -lib_call nutdb  check_files )
 if "%noconsole%" == "false" goto n1
-start %pycommandw% "%squirrel%" -lib_call workers  back_check_files
-start %pycommandw% "%squirrel%" -lib_call workers  scrape_local_libs
-start %pycommandw% "%squirrel%" -lib_call workers  scrape_remote_libs
+start "<Red>" "%REDsquirrel%" /K -lib_call workers  back_check_files
+start "<Red>" "%REDsquirrel%" /K -lib_call workers  scrape_local_libs
+start "<Red>" "%REDsquirrel%" /K -lib_call workers  scrape_remote_libs
 :n1
 if "%noconsole%" == "false" (%pycommand% "%squirrel%" -lib_call Interface start -xarg "%browserpath%" "%videoplayback%" "%height%" "%width%" "%port%" "%host%" )
 if "%noconsole%" == "false" goto salida
-start %pycommandw% "%squirrel%" -lib_call Interface start -xarg "%browserpath%" "%videoplayback%" "%height%" "%width%" "%port%" "%host%" "%noconsole%"
+start "<Red>" "%REDsquirrel%" /K -lib_call Interface start -xarg "%browserpath%" "%videoplayback%" "%height%" "%width%" "%port%" "%host%" "%noconsole%"
 goto salida
 
 :missing_things

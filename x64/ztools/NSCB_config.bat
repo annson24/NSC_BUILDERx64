@@ -232,9 +232,14 @@ echo Input "7" to change top keygeneration to 7 (FW 6.2.0)
 echo Input "8" to change top keygeneration to 8 (FW 7.0.0-8.0.1)
 echo Input "9" to change top keygeneration to 9 (FW 8.1.0)
 echo Input "10" to change top keygeneration to 10 (FW 9.0.0-9.01)
-echo Input "11" to change top keygeneration to 11 (FW 9.1.0-11.0.3)
-echo Input "12" to change top keygeneration to 12 (FW 12.1.0)
-echo Input "13" to change top keygeneration to 13 (>FW 13.0.0)
+echo Input "11"，to change top keygeneration to 11 (9.1.0-11.0.3)
+echo Input "12"，to change top keygeneration to 12 (12.1.0)
+echo Input "13"，to change top keygeneration to 13 (13.0.0-13.2.1)
+echo Input "14"，to change top keygeneration to 14 (14.0.0-14.1.2)
+echo Input "15"，to change top keygeneration to 15 (15.0.0-15.0.1)
+echo Input "16"，to change top keygeneration to 16 (16.0.0-16.1.0)
+echo Input "17"，to change top keygeneration to 17 (17.0.0-17.0.1)
+echo Input "18"，to change top keygeneration to 18 (>18.0.0)
 echo.
 echo Input "b" to return to AUTO-MODE - CONFIGURATION
 echo Input "c" to return to CONFIG MENU
@@ -243,7 +248,7 @@ echo ...........................................................................
 echo.
 set /p bs="Enter your choice: "
 set "v_KGEN=none"
-set "v_CAPRSV="
+set "v_CAPRSV=0"
 if /i "%bs%"=="f" set "v_KGEN=-kp false"
 if /i "%bs%"=="0" set "v_KGEN=-kp 0"
 if /i "%bs%"=="0" set "v_CAPRSV=--RSVcap 0"
@@ -271,16 +276,26 @@ if /i "%bs%"=="11" set "v_KGEN=-kp 11"
 if /i "%bs%"=="11" set "v_CAPRSV=--RSVcap 605028352"
 if /i "%bs%"=="12" set "v_KGEN=-kp 12"
 if /i "%bs%"=="12" set "v_CAPRSV=--RSVcap 806354944"
-if /i "%bs%"=="13" set "vkey=-kp 13"
-if /i "%bs%"=="13" set "capRSV=--RSVcap 872415232"
+if /i "%bs%"=="13" set "v_KGEN=-kp 13"
+if /i "%bs%"=="13" set "v_CAPRSV=--RSVcap 872415232"
+if /i "%bs%"=="14" set "v_KGEN=-kp 14"
+if /i "%bs%"=="14" set "v_CAPRSV=--RSVcap 939524096"
+if /i "%bs%"=="15" set "v_KGEN=-kp 15"
+if /i "%bs%"=="15" set "v_CAPRSV=--RSVcap 1006632960"
+if /i "%bs%"=="16" set "v_KGEN=-kp 16"
+if /i "%bs%"=="16" set "v_CAPRSV=--RSVcap 1073741824"
+if /i "%bs%"=="17" set "v_KGEN=-kp 17"
+if /i "%bs%"=="17" set "v_CAPRSV=--RSVcap 1140851708"
+if /i "%bs%"=="18" set "v_KGEN=-kp 18"
+if /i "%bs%"=="18" set "v_CAPRSV=--RSVcap 1207960692"
 
 if /i "%bs%"=="b" goto sc2
 if /i "%bs%"=="c" goto sc1
 if /i "%bs%"=="e" goto salida
 
-if "%v_KGEN%"=="none" echo WRONG CHOICE
-if "%v_KGEN%"=="none" echo.
-if "%v_KGEN%"=="none" goto op_KGEN
+if "%v_RSV%"=="none" echo WRONG CHOICE
+if "%v_RSV%"=="none" echo.
+if "%v_RSV%"=="none" goto op_RSV
 
 set v_KGEN="vkey=%v_KGEN%"
 set v_KGEN="%v_KGEN%"
